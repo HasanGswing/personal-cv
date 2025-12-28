@@ -19,7 +19,7 @@ body {
   top: 0;
   width: 250px;
   height: 100%;
-  background-color: #4a90e2; /* updated modern blue */
+  background-color: #4a90e2;
   color: white;
   padding: 20px;
   display: flex;
@@ -52,7 +52,7 @@ body {
   border: none;
   border-radius: 5px;
   background-color: #fff;
-  color: #4a90e2; /* updated */
+  color: #4a90e2;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -64,7 +64,7 @@ body {
 
 /* Header */
 header {
-  background-color: #4a90e2; /* updated modern blue */
+  background-color: #4a90e2;
   color: white;
   padding: 20px;
   text-align: center;
@@ -82,11 +82,9 @@ header h1 {
   margin-bottom: 5px;
 }
 
-/* Subtitle styling */
 header .subtitle {
   font-size: 1.1rem;
   color: #e0f0ff;
-  font-style: normal;
   margin-top: 5px;
 }
 
@@ -138,15 +136,10 @@ main {
 }
 
 .section h2 {
-  color: #4a90e2; /* updated */
+  color: #4a90e2;
   margin-bottom: 15px;
 }
 
-ul {
-  list-style: disc inside;
-}
-
-/* Skills horizontal */
 .skills-list {
   display: flex;
   gap: 15px;
@@ -154,32 +147,30 @@ ul {
 }
 
 .skill-item {
-  background-color: #4a90e2; /* updated */
+  background-color: #4a90e2;
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  cursor: default;
 }
 
 .skill-item:hover {
   transform: translateY(-3px) scale(1.05);
-  background-color: #357abd; /* darker shade for hover */
+  background-color: #357abd;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #4a90e2; /* updated */
+  background-color: #4a90e2;
   color: white;
   margin-left: 250px;
 }
 
 /* Links */
 a {
-  color: #4a90e2; /* updated */
-  text-decoration: none;
+  color: #4a90e2;
 }
 
 a:hover {
@@ -210,4 +201,63 @@ body.dark-mode .sidebar button {
 
 body.dark-mode .sidebar a {
   color: #e0e0e0;
+}
+
+/* ===================== */
+/*   RESPONSIVE DESIGN   */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  header,
+  footer {
+    margin-left: 220px;
+  }
+
+  main {
+    margin-left: 230px;
+  }
+
+  .section {
+    padding: 25px 15px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .sidebar-section {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  header,
+  footer,
+  main {
+    margin-left: 0;
+  }
+
+  header img {
+    width: 90px;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .section {
+    margin: 15px 5px;
+    padding: 20px 12px;
+  }
 }

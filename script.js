@@ -1,6 +1,6 @@
-// Dark mode toggle with joke transformation
+// Dark mode toggle with iOS-style switch and joke easter egg
 const toggle = document.getElementById('darkModeToggle');
-toggle.addEventListener('click', () => {
+toggle.addEventListener('change', () => {
   const body = document.body;
   body.classList.toggle('dark-mode');
 
@@ -16,7 +16,6 @@ toggle.addEventListener('click', () => {
     nameHeader.textContent = 'Hasan-i Sabbah';
     subtitle.textContent = 'Founder of the Order of Assassins';
 
-    // Update nav links for dark mode joke
     navList.innerHTML = `
       <li><a href="#overview">Overview</a></li>
       <li><a href="#biography">Biography</a></li>
@@ -46,7 +45,6 @@ toggle.addEventListener('click', () => {
     nameHeader.textContent = 'Hasan Sabah';
     subtitle.innerHTML = 'Computer Science Student <span class="separator">•</span> Networking Specialist';
 
-    // Restore original nav links
     navList.innerHTML = `
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -57,13 +55,11 @@ toggle.addEventListener('click', () => {
     `;
 
     main.innerHTML = `
-      <!-- About -->
       <section id="about" class="section">
         <h2>About Me</h2>
         <p>Third-year computer science student specializing in networking. Focused on practical web development and building clean, functional projects.</p>
       </section>
 
-      <!-- Skills -->
       <section id="skills" class="section">
         <h2>Skills</h2>
         <div class="skills-list">
@@ -74,7 +70,6 @@ toggle.addEventListener('click', () => {
         </div>
       </section>
 
-      <!-- Other Studies -->
       <section id="other" class="section">
         <h2>Other Programming Languages Studied</h2>
         <ul>
@@ -86,20 +81,20 @@ toggle.addEventListener('click', () => {
         </ul>
       </section>
 
-      <!-- Education -->
       <section id="education" class="section">
         <h2>Education</h2>
         <p>University of Mosul, College of Computer Science and Mathematics, Department of Networking</p>
         <p>Third Year, First Semester</p>
       </section>
 
-      <!-- Experience -->
       <section id="experience" class="section">
         <h2>Experience / Courses</h2>
         <p>Coursework and projects in web development, networking, databases, and systems fundamentals.</p>
-      </section><!-- Projects -->
+      </section>
+
       <section id="projects" class="section">
-        <h2>Projects</h2><p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
+        <h2>Projects</h2>
+        <p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
       </section>
     `;
   }

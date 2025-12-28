@@ -47,19 +47,50 @@ body {
   text-decoration: underline;
 }
 
-.sidebar button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #4a90e2;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* iOS-style Dark Mode Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
 }
 
-.sidebar button:hover {
-  background-color: #e0e0e0;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4a90e2;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
 }
 
 /* Header */
@@ -192,11 +223,6 @@ body.dark-mode .section {
 
 body.dark-mode .sidebar {
   background-color: #222;
-}
-
-body.dark-mode .sidebar button {
-  background-color: #555;
-  color: #fff;
 }
 
 body.dark-mode .sidebar a {

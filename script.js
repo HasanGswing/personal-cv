@@ -1,7 +1,10 @@
-// Dark mode toggle with iOS-style switch and joke easter egg
+// =====================
+// Dark mode toggle with iOS-style switch and easter egg
+// =====================
 const toggle = document.getElementById('darkModeToggle');
 const phoneNumber = document.getElementById('phone-number');
 const copyPhone = document.getElementById('copy-phone');
+const backToTop = document.getElementById('back-to-top');
 
 toggle.addEventListener('change', () => {
   const body = document.body;
@@ -93,17 +96,16 @@ toggle.addEventListener('change', () => {
       <section id="experience" class="section">
         <h2>Experience & Courses</h2>
         <p>Coursework and projects in web development, networking, databases, and systems fundamentals.</p>
-      </section>
-
-      <section id="project" class="section">
-        <h2>Project</h2><p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
+      </section><section id="project" class="section">
+        <h2>Project</h2>
+        <p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
       </section>
     `;
   }
 });
 
 // =====================
-// Copy phone number on click of icon
+// Copy phone number to clipboard
 // =====================
 copyPhone.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -112,5 +114,23 @@ copyPhone.addEventListener('click', (e) => {
     alert('Phone number copied to clipboard!');
   }).catch(err => {
     console.error('Failed to copy phone number: ', err);
+  });
+});
+
+// =====================
+// Back to top button functionality
+// =====================
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });

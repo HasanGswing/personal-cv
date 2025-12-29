@@ -102,6 +102,9 @@ toggle.addEventListener('change', () => {
       </section>
     `;
   }
+
+  // Re-attach smooth scroll to new nav links
+  attachSmoothScroll();
 });
 
 // =====================
@@ -134,3 +137,23 @@ backToTop.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+// =====================
+// Smooth scrolling for nav links
+// =====================
+function attachSmoothScroll() {
+  const navLinks = document.querySelectorAll('header nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetID = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetID);
+      if(target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+// Attach on initial load
+attachSmoothScroll();

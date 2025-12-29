@@ -1,5 +1,8 @@
 // Dark mode toggle with iOS-style switch and joke easter egg
 const toggle = document.getElementById('darkModeToggle');
+const phoneNumber = document.getElementById('phone-number');
+const copyPhone = document.getElementById('copy-phone');
+
 toggle.addEventListener('change', () => {
   const body = document.body;
   body.classList.toggle('dark-mode');
@@ -40,7 +43,7 @@ toggle.addEventListener('change', () => {
       </section>
     `;
   } else {
-    // Swap back to normal CV with updated Other Languages section
+    // Swap back to normal CV
     profileImg.src = 'profile-light.png';
     nameHeader.textContent = 'Hasan Sabah';
     subtitle.innerHTML = 'Computer Science Student <span class="separator">•</span> Networking Specialist';
@@ -51,7 +54,7 @@ toggle.addEventListener('change', () => {
       <li><a href="#other">Other Studies</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#project">Project</a></li>
     `;
 
     main.innerHTML = `
@@ -88,14 +91,26 @@ toggle.addEventListener('change', () => {
       </section>
 
       <section id="experience" class="section">
-        <h2>Experience / Courses</h2>
+        <h2>Experience & Courses</h2>
         <p>Coursework and projects in web development, networking, databases, and systems fundamentals.</p>
       </section>
 
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
+      <section id="project" class="section">
+        <h2>Project</h2><p>Personal CV webpage built using HTML, CSS, and JavaScript as part of the Advanced Web Development course requirements.</p>
       </section>
     `;
   }
+});
+
+// =====================
+// Copy phone number on click of icon
+// =====================
+copyPhone.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const phoneText = phoneNumber.textContent.replace(/\s+/g, '').replace('📞','').replace('📋',''); 
+  navigator.clipboard.writeText(phoneText).then(() => {
+    alert('Phone number copied to clipboard!');
+  }).catch(err => {
+    console.error('Failed to copy phone number: ', err);
+  });
 });

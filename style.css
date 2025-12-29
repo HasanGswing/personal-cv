@@ -43,31 +43,14 @@ body {
   padding-left: 10px;
 }
 
-.sidebar p {
+.sidebar p, .sidebar a {
   color: white;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.sidebar a {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 0.95rem;
   transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Only email and GitHub links yellow in light mode */
-.sidebar .sidebar-section:nth-child(1) a {
-  color: #ffd966;
-}
-
-.sidebar .sidebar-section:nth-child(1) a:hover {
-  color: #fffa9c;
 }
 
 .sidebar a:hover {
@@ -218,7 +201,8 @@ main {
 
 .section h2 {
   color: #4a90e2;
-  font-size: 1.8rem;margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -236,8 +220,7 @@ main {
 /*         SKILLS        */
 /* ===================== */
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex;flex-wrap: wrap;
   gap: 15px;
 }
 
@@ -276,12 +259,10 @@ footer {
 /*        LINKS          */
 /* ===================== */
 a {
-  color: #4a90e2;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-  color: #ffd966;
   transform: scale(1.05);
 }
 
@@ -306,6 +287,20 @@ body.dark-mode .sidebar {
 
 body.dark-mode .sidebar a {
   color: #ffd966;
+}
+
+/* ===================== */
+/* Make email and GitHub yellow in light mode */
+.sidebar a[href^="mailto"],
+.sidebar a[href*="github.com"] {
+  color: #ffd966;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a[href^="mailto"]:hover,
+.sidebar a[href*="github.com"]:hover {
+  color: #fffa9c;
+  transform: scale(1.05);
 }
 
 /* ===================== */
@@ -359,4 +354,19 @@ body.dark-mode .sidebar a {
     margin: 15px 5px;
     padding: 25px 15px;
   }
+}
+
+/* ===================== */
+/* Copy icon styling */
+/* ===================== */
+#copy-phone {
+  cursor: pointer;
+  margin-left: 8px;
+  color: #ffd966;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#copy-phone:hover {
+  transform: scale(1.2);
+  color: #fffa9c;
 }

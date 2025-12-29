@@ -40,7 +40,7 @@ toggle.addEventListener('change', () => {
       </section>
     `;
   } else {
-    // Swap back to normal CV
+    // Swap back to normal CV with updated Other Languages section
     profileImg.src = 'profile-light.png';
     nameHeader.textContent = 'Hasan Sabah';
     subtitle.innerHTML = 'Computer Science Student <span class="separator">•</span> Networking Specialist';
@@ -72,13 +72,13 @@ toggle.addEventListener('change', () => {
 
       <section id="other" class="section">
         <h2>Other Programming Languages Studied</h2>
-        <ul>
-          <li>C++</li>
-          <li>Python</li>
-          <li>R</li>
-          <li>SQL</li>
-          <li>Assembly</li>
-        </ul>
+        <div class="skills-list">
+          <span class="skill-item">C++</span>
+          <span class="skill-item">Python</span>
+          <span class="skill-item">R</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">Assembly</span>
+        </div>
       </section>
 
       <section id="education" class="section">
